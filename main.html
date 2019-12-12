@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>课堂自动点名</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="w header">
+            <select name="cl" id="cl" v-model="cl">
+                <option value="cl2">计算机2班</option>
+            </select>
+        </div>
+        <div class="w banner learfix">
+            <div class="left">
+                <p>班级总人数： <span>{{clNumber}}</span> 人</p>
+                <p>应到： <span>{{clNumber}} 人</span></p>
+                <p>实到： <span>{{count}} 人</span></p>
+                <div class="ca">
+                    <button @click="checkList">考勤名单</a>
+                    <button @click="absencesList">缺勤名单</a>
+                </div>
+            </div>
+            <div class="right">
+                <p><span>姓名： {{name}}</span> </p>
+                <div class="ba">
+                    <button @click="check">考勤</a>
+                    <button @click="absences">缺勤</a>
+                </div>
+                <button @click="begin" class="begin">开始点名</button>
+            </div>
+        </div>
+        <div class="w footer" v-show="ifshow">
+            <div class="kaoqinList" v-show="kaoqinListShow">{{kaoqinList}}</div>
+            <div class="queqinList" v-show="queqinListShow">{{queqinList}}</div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>

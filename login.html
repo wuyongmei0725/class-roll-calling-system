@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="main">
+            <form action="#">
+                <p>课堂点名系统</p>
+                <input type="text" placeholder="User" v-model="username">
+                <input type="password" placeholder="Password" v-model="password">
+                <a class="login" :href="url" :target="target" @click="login">登录</button>
+                <a class="login" :href="url" :target="target" @click="login">注册</button>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+
+</html>
